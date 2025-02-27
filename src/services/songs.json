@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Blinding Lights",
+    "artist": "The Weeknd",
+    "release_date": "2019-11-29",
+    "plays": 1200000000,
+    "likes": 9500000,
+    "album": "After Hours"
+  },
+  {
+    "id": 2,
+    "name": "Shape of You",
+    "artist": "Ed Sheeran",
+    "release_date": "2017-01-06",
+    "plays": 5000000000,
+    "likes": 23000000,
+    "album": "÷"
+  },
+  {
+    "id": 3,
+    "name": "Levitating",
+    "artist": "Dua Lipa",
+    "release_date": "2020-03-27",
+    "plays": 2000000000,
+    "likes": 8500000,
+    "album": "Future Nostalgia"
+  },
+  {
+    "id": 4,
+    "name": "Good 4 U",
+    "artist": "Olivia Rodrigo",
+    "release_date": "2021-05-14",
+    "plays": 3000000000,
+    "likes": 11000000,
+    "album": "SOUR"
+  },
+  {
+    "id": 5,
+    "name": "Montero (Call Me By Your Name)",
+    "artist": "Lil Nas X",
+    "release_date": "2021-03-26",
+    "plays": 1800000000,
+    "likes": 9200000,
+    "album": "Montero"
+  },
+  {
+    "id": 6,
+    "name": "Rockstar",
+    "artist": "DaBaby ft. Roddy Ricch",
+    "release_date": "2020-04-24",
+    "plays": 3500000000,
+    "likes": 15000000,
+    "album": "Blame It on Baby"
+  },
+  {
+    "id": 7,
+    "name": "Save Your Tears",
+    "artist": "The Weeknd",
+    "release_date": "2020-08-09",
+    "plays": 2500000000,
+    "likes": 10000000,
+    "album": "After Hours"
+  },
+  {
+    "id": 8,
+    "name": "Peaches",
+    "artist": "Justin Bieber ft. Daniel Caesar, Giveon",
+    "release_date": "2021-03-19",
+    "plays": 2200000000,
+    "likes": 9500000,
+    "album": "Justice"
+  },
+  {
+    "id": 9,
+    "name": "Happier Than Ever",
+    "artist": "Billie Eilish",
+    "release_date": "2021-07-30",
+    "plays": 1600000000,
+    "likes": 7000000,
+    "album": "Happier Than Ever"
+  },
+  {
+    "id": 10,
+    "name": "Watermelon Sugar",
+    "artist": "Harry Styles",
+    "release_date": "2019-11-16",
+    "plays": 4000000000,
+    "likes": 13000000,
+    "album": "Fine Line"
+  }
+]

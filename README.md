@@ -1,16 +1,24 @@
-# Songs Backend
+# 🎵 Songs Backend
 
 Test Backend application, without database, simulating a Spotify-like song application, with songs, artists, etc.
 
 ## Endpoints
 
-### GET /songs
+### 👉 GET /songs
 
 Get all Songs.
 
 ---
 
-### POST /songs
+### 👉 GET /songs/:id
+
+Get song by ID. Send ID by params:
+
+**/songs/5**
+
+---
+
+### 👉 POST /songs
 
 Create a new song.
 
@@ -26,7 +34,7 @@ Create a new song.
 
 ---
 
-### PUT /songs/addPlay
+### 👉 PUT /songs/addPlay
 
 Add a play to a song.
 
@@ -34,6 +42,20 @@ Add a play to a song.
 
 ```json
 {
-  "songId": 11
+  "songId": 7
+}
+```
+
+---
+
+### 👉 PUT /songs/addLike
+
+Add a like to a song.
+
+**Request Body:**
+
+```json
+{
+  "songId": 7
 }
 ```

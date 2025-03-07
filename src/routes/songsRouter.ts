@@ -9,6 +9,8 @@ import {
 
 const songsRouter = Router()
 
+/* SONGS ENDPOINTS */
+
 // Get All Songs
 songsRouter.get('/', getAllSongsHandler)
 

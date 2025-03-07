@@ -4,9 +4,11 @@ import {
   findSongById,
   getAllSongs,
   addPlay,
+  addLike,
 } from '../services/songServices'
+import { checkSongData } from '../utils'
 
-const getAllSongsHandler = (_req: Request, res: Response) => {
+export const getAllSongsHandler = (_req: Request, res: Response) => {
   try {
     const songs = getAllSongs()
 
@@ -16,11 +18,11 @@ const getAllSongsHandler = (_req: Request, res: Response) => {
   }
 }
 
-const getSongByIdHandler = (req: Request, res: Response) => {
+export const getSongByIdHandler = (req: Request, res: Response) => {
   try {
-    const id = req.params.id
+    const songId = req.params.id
 
-    const song = findSongById(Number(id))
+    const song = findSongById(Number(songId))
 
     if (song) res.status(200).send(song)
     else res.status(400).json({ error: 'Song not found' })
@@ -29,18 +31,11 @@ const getSongByIdHandler = (req: Request, res: Response) => {
   }
 }
 
-const addSongHandler = (req: Request, res: Response) => {
+export const addSongHandler = (req: Request, res: Response) => {
   try {
     const { name, artist, album } = req.body
 
-    if (
-      !name ||
-      !artist ||
-      !album ||
-      typeof name !== 'string' ||
-      typeof artist !== 'string' ||
-      typeof album !== 'string'
-    ) {
+    if (checkSongData({ name, artist, album })) {
       res.status(400).json({ error: 'Incorrect or missing data' })
     } else {
       const newSong = addSong({ name, artist, album })
@@ -52,7 +47,7 @@ const addSongHandler = (req: Request, res: Response) => {
   }
 }
 
-const addPlayHandler = (req: Request, res: Response) => {
+export const addPlayHandler = (req: Request, res: Response) => {
   try {
     const { songId } = req.body
 
@@ -67,9 +62,17 @@ const addPlayHandler = (req: Request, res: Response) => {
   }
 }
 
-export {
-  getAllSongsHandler,
-  getSongByIdHandler,
-  addSongHandler,
-  addPlayHandler,
+export const addLikeHandler = (req: Request, res: Response) => {
+  try {
+    const { songId } = req.body
+
+    if (!songId) res.status(400).json({ error: 'Missing song id' })
+
+    const modifiedSong = addLike(songId)
+
+    if (!modifiedSong) res.status(404).json({ error: 'Song not found' })
+    else res.status(200).send(modifiedSong)
+  } catch (error: any) {
+    res.status(400).send(error.message)
+  }
 }

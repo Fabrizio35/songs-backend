@@ -3,7 +3,8 @@ import {
   getAllSongsHandler,
   getSongByIdHandler,
   addSongHandler,
-  addPlayHandler
+  addPlayHandler,
+  addLikeHandler,
 } from '../handlers/songsHandlers'
 
 const songsRouter = Router()
@@ -18,6 +19,9 @@ songsRouter.get('/:id', getSongByIdHandler)
 songsRouter.post('/', addSongHandler)
 
 // Add Play Song
-songsRouter.put("/addPlay", addPlayHandler)
+songsRouter.put('/addPlay', addPlayHandler)
+
+// Add Like Song
+songsRouter.put('/addLike', addLikeHandler)
 
 export default songsRouter

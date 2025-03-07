@@ -3,15 +3,15 @@ import songsData from './songs.json'
 
 const songs: Song[] = songsData
 
-const getAllSongs = (): Song[] => songs
+export const getAllSongs = (): Song[] => songs
 
-const findSongById = (id: number): Song | undefined => {
+export const findSongById = (id: number): Song | undefined => {
   const song = songs.find((s) => s.id === id)
 
   return song
 }
 
-const addSong = (song: PostSong): Song => {
+export const addSong = (song: PostSong): Song => {
   const currentDate = new Date()
 
   const formattedDate = currentDate.toISOString().split('T')[0]
@@ -29,7 +29,7 @@ const addSong = (song: PostSong): Song => {
   return newSong
 }
 
-const addPlay = (songId: number): Song | undefined => {
+export const addPlay = (songId: number): Song | undefined => {
   const song = findSongById(songId)
 
   if (song) {
@@ -44,4 +44,17 @@ const addPlay = (songId: number): Song | undefined => {
   return undefined
 }
 
-export { getAllSongs, addSong, findSongById, addPlay }
+export const addLike = (songId: number): Song | undefined => {
+  const song = findSongById(songId)
+
+  if (song) {
+    const modifiedSong = {
+      ...song,
+      likes: song.likes + 1,
+    }
+
+    return modifiedSong
+  }
+
+  return undefined
+}
